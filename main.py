@@ -54,7 +54,25 @@ schedule VARCHAR(20) NOT NULL,
 benefits_status VARCHAR(20) NOT NULL);
 """
 
+Book_Info = """
+insert into Book_Information VALUES
+(001, "Don Quixote", "Literature", "$25"),
+(002, "Tom Clancy", "Novel", "$15"),
+(003, "Harry Potter", "Novel", "$15"),
+(004, "Lincoln", "Biography", "$20");
+"""
+
+Employee_Info = """
+insert into Employee_Information VALUES
+( 123, "John Berry", "Cashier", "M-F", "Enrolled"),
+( 124 , "Mia Thompson", "Cashier", "Th-Sun", "Not Enrolled"),
+( 125 , "Robert Rivera", "Supervisor", "Sat-Th", "Enrolled"),
+( 126 , "Oscar Ramos", "General Manager", "All week", "Enrolled")
+
+
+"""
+
 #Callout section
 
 connection = create_server_connection("localhost", "root", "student", "Bookstore")
-execute_query(connection, create_new_table2)
+execute_query(connection, Employee_Info)
