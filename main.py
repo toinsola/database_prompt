@@ -68,11 +68,15 @@ insert into Employee_Information VALUES
 ( 124 , "Mia Thompson", "Cashier", "Th-Sun", "Not Enrolled"),
 ( 125 , "Robert Rivera", "Supervisor", "Sat-Th", "Enrolled"),
 ( 126 , "Oscar Ramos", "General Manager", "All week", "Enrolled")
+"""
 
-
+update_info = """
+update Book_Information
+SET price = "$100"
+WHERE genre = "Literature";
 """
 
 #Callout section
 
 connection = create_server_connection("localhost", "root", "student", "Bookstore")
-execute_query(connection, Employee_Info)
+execute_query(connection, update_info)
