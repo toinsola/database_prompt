@@ -78,10 +78,10 @@ WHERE genre = "Literature";
 
 delete_info = """
 DELETE FROM Book_Information
-WHERE book
+WHERE genre = "Biography";
 """
 
 #Callout section
 
 connection = create_server_connection("localhost", "root", "student", "Bookstore")
-execute_query(connection, update_info)
+execute_query(connection, delete_info)
