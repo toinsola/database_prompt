@@ -27,6 +27,34 @@ def create_database(connection, query):
     except Error as err:
         print(f"Error: '{err}'")
 
+
+def execute_query(connection, query):
+    cursor = connection.cursor()
+    try:
+        cursor.execute(query)
+        connection.commit()
+        print("Query successful")
+    except Error as err:
+        print(f"Error: '{err}'")
+
+create_new_table1 = """
+create table Book_Information(
+book_id int primary key,
+title VARCHAR(20) NOT NULL,
+genre VARCHAR(20) NOT NULL,
+price VARCHAR(20) NOT NULL);
+"""
+
+create_new_table2 = """
+create table Employee_Information(
+employee_id int primary key,
+name VARCHAR(20) NOT NULL,
+position VARCHAR(20) NOT NULL,
+schedule VARCHAR(20) NOT NULL,
+benefits_status VARCHAR(20) NOT NULL);
+"""
+
 #Callout section
 
 connection = create_server_connection("localhost", "root", "student", "Bookstore")
+execute_query(connection, create_new_table2)
