@@ -76,6 +76,11 @@ SET price = "$100"
 WHERE genre = "Literature";
 """
 
+delete_info = """
+DELETE FROM Book_Information
+WHERE book
+"""
+
 #Callout section
 
 connection = create_server_connection("localhost", "root", "student", "Bookstore")
